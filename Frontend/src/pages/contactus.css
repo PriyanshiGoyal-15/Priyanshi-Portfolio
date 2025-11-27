@@ -1,0 +1,316 @@
+.form-Container {
+    position: relative;
+    margin: auto;
+    font-size: 8vh;
+    width: 70%;
+    min-height: 75vh;
+    background: #18121ec0;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+}
+
+.form-heading img {
+    width: 60vh;
+}
+
+.formContent {
+    justify-content: center;
+    align-items: center;
+}
+
+
+.labelName {
+    font-size: 2vh;
+    font-family: "good vibes";
+    width: 40vh;
+}
+
+/* FORCE REMOVE autofill background completely */
+.form-control:-webkit-autofill,
+.form-control:-webkit-autofill:focus,
+.form-control:-webkit-autofill:hover {
+    background-color: transparent !important;
+    -webkit-text-fill-color: #fff !important;
+    box-shadow: 0 0 0px 1000px transparent inset !important;
+    border-bottom: 2px solid #186938 !important;
+    /* keeps your styling */
+    transition: background-color 9999s ease-in-out 0s !important;
+}
+
+.formContent .row .col-sm-10 .form-control {
+    width: 70vh;
+    padding: 5px 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #186938 !important;
+    color: white !important;
+    font-size: 16px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    transition: 0.3s ease;
+}
+
+/* Placeholder */
+.formContent .row .col-sm-10 .form-control::placeholder {
+    color: #ffffff82 !important;
+}
+
+/* Hover */
+.formContent .row .col-sm-10 .form-control:hover {
+    border-bottom-color: #a3263f !important;
+    box-shadow: 0 2px 3px rgba(246, 92, 115, 0.5) !important;
+}
+
+/* Focus glow */
+.formContent .row .col-sm-10 .form-control:focus {
+    border-bottom: 2px solid #255c35 !important;
+    box-shadow: 0 4px 4px rgba(36, 104, 47, 0.8) !important;
+}
+
+.formContent .row .col-sm-10 .form-control:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-text-fill-color: #fff !important;
+}
+
+/* Pop Up */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+/* Popup box */
+.popup-box {
+    background: #1e1e1e;
+    padding: 10px 30px;
+    border-radius: 12px;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: 2px solid #08040795;
+    box-shadow: 0 0 20px rgba(68, 20, 32, 0.8);
+    animation: popupScale 0.3s ease;
+}
+
+@keyframes popupScale {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* responsive */
+/* Large Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .form-Container {
+        width: 85%;
+        padding: 20px;
+        min-height: 80vh;
+    }
+
+    .form-heading img {
+        width: 45vh;
+    }
+
+    .formContent .row .col-sm-10 .form-control {
+        width: 55vh;
+    }
+
+    .labelName {
+        font-size: 2.2vh;
+        width: 30vh;
+    }
+}
+
+/* Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .form-Container {
+        flex-direction: column;
+        width: 90%;
+        padding: 10px;
+    }
+
+    .form-heading img {
+        width: 35vh;
+    }
+
+    .formContent .row {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .labelName {
+        width: 100%;
+        font-size: 2.3vh;
+        margin-bottom: 5px;
+    }
+
+    .formContent .row .col-sm-10 .form-control {
+        width: 100%;
+    }
+}
+
+/* Mobile Devices (max-width: 576px) */
+@media (max-width: 576px) {
+    .form-Container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .form-heading img {
+        width: 28vh;
+    }
+
+    .formContent .row .col-sm-10 .form-control {
+        font-size: 14px !important;
+        padding: 4px 0 !important;
+        width: 100%;
+    }
+
+    .labelName {
+        font-size: 2vh;
+        width: 100%;
+    }
+
+    .row {
+        width: 100%;
+    }
+}
+
+/* Blob wrapper  */
+.blob-wrapper {
+    position: absolute;
+    right: 5vh;
+    top: 22vh;
+    width: clamp(250px, 35vh, 420px);
+    height: clamp(250px, 40vh, 420px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.blob-outline {
+    position: absolute;
+    inset: 0;
+    border: 3px solid rgba(255, 255, 255, 0.45);
+    border-radius: 90% 40% 70% 40%;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(8px);
+    box-shadow:
+        0 0 18px rgba(255, 255, 255, 0.12),
+        0 0 22px rgba(0, 200, 255, 0.4);
+    animation: blobFloat 6s ease-in-out infinite;
+    z-index: 1;
+}
+
+/* Blob animation */
+@keyframes blobFloat {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(3deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* blob */
+.blob-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 80%;
+    color: white;
+    pointer-events: auto;
+}
+
+.blob-para {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 6px white);
+}
+
+/* blob responsive */
+@media (max-width: 768px) {
+    .blob-wrapper {
+        position: relative;
+        right: 0;
+        top: 0;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 420px) {
+    .blob-wrapper {
+        width: 220px;
+        height: 250px;
+    }
+
+    .blob-para {
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+    }
+
+    .social-icons img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 320px) {
+    .blob-wrapper {
+        width: 180px;
+        height: 200px;
+    }
+
+    .blob-para {
+        font-size: 0.75rem;
+    }
+
+    .social-icons img {
+        width: 22px;
+        height: 22px;
+    }
+}

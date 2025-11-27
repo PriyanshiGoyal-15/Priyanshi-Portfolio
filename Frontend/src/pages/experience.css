@@ -1,0 +1,170 @@
+/* SECTION BACKGROUND */
+.experience-section {
+    background: #0e0e0e;
+    padding: 2rem 2rem;
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+/* Soft diagonal light effects */
+.experience-section::before,
+.experience-section::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: rgba(0, 166, 255, 0.12);
+    filter: blur(110px);
+    z-index: 1;
+    transform: rotate(25deg);
+}
+
+.experience-section::before {
+    top: -80px;
+    left: -40px;
+}
+
+.experience-section::after {
+    bottom: -90px;
+    right: -30px;
+}
+
+/* TITLE */
+.exp-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 10;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* TIMELINE */
+.timeline {
+    position: relative;
+    margin: auto;
+    z-index: 10;
+    width: fit-content;
+
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: rgba(0, 191, 255, 0.4);
+    box-shadow: 0 0 12px rgba(0, 191, 255, 0.6);
+}
+
+/* ITEM */
+.timeline-item {
+    display: flex;
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+/* DOT */
+.timeline-dot {
+    width: 16px;
+    height: 16px;
+    background: #00bfff;
+    border-radius: 50%;
+    margin-right: 25px;
+    position: relative;
+    top: 10px;
+    box-shadow: 0 0 12px #00bfff;
+}
+
+/* CARD */
+.glass-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(0, 191, 255, 0.3);
+    backdrop-filter: blur(12px);
+    padding: 1.8rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 650px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.08);
+}
+
+.glass-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.3);
+}
+
+/* TEXT */
+.company {
+    color: #b3ecff;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.company span {
+    color: #00c3ff;
+}
+
+.location {
+    color: #bdbdbd;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 6px;
+    line-height: 1.4;
+    color: #e4faff;
+}
+
+/* ANIMATION */
+.fadeInUp {
+    animation: fadeUp 0.7s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .timeline {
+        margin-left: 0;
+    }
+
+    .timeline::before {
+        left: 0;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        padding-left: 20px;
+    }
+
+    .timeline-dot {
+        left: -10px;
+        margin-bottom: 10px;
+    }
+
+    .glass-card {
+        padding: 1.4rem;
+    }
+}

@@ -1,0 +1,89 @@
+.masthead-brand {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 3rem;
+    display: flex;
+    margin-left: 25rem !important;
+    margin-top: 2rem !important;
+    position: relative;
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Default NavLink Style */
+.nav-link {
+    color: white;
+    padding: 10px 35px;
+    position: relative;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Active NavLink Glow */
+.nav-link.active {
+    color: #0dcaf0 !important;
+    font-weight: bold;
+    text-shadow: 0 0 10px #0dcaf067, 0 0 20px #0dcaf080;
+    border-bottom: 2px solid #0dcaf0;
+}
+
+/* Optional: Neon Glow Animation */
+.nav-link.active {
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #0dcaf080, 0 0 10px #0dcaf050;
+    }
+
+    100% {
+        text-shadow: 0 0 12px #0dcaf0b0, 0 0 25px #0dcaf0a0;
+    }
+}
+
+
+
+@media (max-width: 992px) {
+    .masthead-brand {
+        margin-left: 2rem !important;
+        margin-top: 1rem !important;
+    }
+}
+
+.nav {
+    margin-left: 3rem !important;
+}
+
+/* Responsive navigation layout */
+@media (max-width: 768px) {
+    .inner {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav {
+        margin-left: 0 !important;
+        justify-content: center;
+    }
+
+    .masthead-brand {
+        margin-left: 0 !important;
+        margin-top: 0.5rem !important;
+    }
+}
+
+.nav-link {
+    color: #ffffff;
+}
+
+.nav-link:hover {
+    color: #cdd4d8;
+    transition: 0.5s;
+}
