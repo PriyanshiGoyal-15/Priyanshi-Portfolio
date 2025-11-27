@@ -1,5 +1,5 @@
 import React from "react";
-import "./Project.css";
+import "../src/pages/Project.css";
 import foodOrderImg from "../image/projects/food-order.png";
 import { FaReact, FaNode, FaDatabase, FaBootstrap } from "react-icons/fa";
 import { SiExpress } from "react-icons/si";
