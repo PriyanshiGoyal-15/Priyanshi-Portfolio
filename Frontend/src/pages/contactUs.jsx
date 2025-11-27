@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../pages/contactus.css";
 import contactimg from "../pages/Contact+Me.webp";
+import { API_BASE_URL } from "../config.js";
 
 const ContactMe = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +20,7 @@ const ContactMe = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("/api/contact/send", {
+      const res = await fetch(`${API_BASE_URL}/api/contact/send`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
