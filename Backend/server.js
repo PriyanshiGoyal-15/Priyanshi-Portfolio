@@ -12,7 +12,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: "https://priyanshifrontend15.netlify.app",
+    origin: "priyanshi-portfolio-nine.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
